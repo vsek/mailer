@@ -11,13 +11,13 @@ class Mailer extends \Nette\Object{
     /**
      * \Nette\Mail\IMailer
      */
-    private $mailer;
+    protected $mailer;
     
     /**
      *
      * @var \App\Model\EmailLog
      */
-    private $model;
+    protected $model;
     
     public function __construct(\Nette\Mail\IMailer $mailer, \App\Model\EmailLog $model) {
         $this->mailer = $mailer;
