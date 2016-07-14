@@ -32,8 +32,7 @@ class Mailer extends \Nette\Object{
                 'text' => $mail->getText(),
                 'subject' => $mail->getSubject(),
             ));
-        }catch(\Nette\Mail\SmtpException $e){
-            \Tracy\Debugger::dump($e);exit;
+        }catch(\Nette\Neon\Exception $e){
             $this->model->insert(array(
                 'adress' => implode(',', $mail->getAddress()),
                 'text' => $mail->getText(),
