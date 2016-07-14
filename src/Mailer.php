@@ -32,7 +32,7 @@ class Mailer extends \Nette\Object{
                 'text' => $mail->getText(),
                 'subject' => $mail->getSubject(),
             ));
-        }catch(\Nette\Neon\Exception $e){
+        }catch(\Exception $e){
             $this->model->insert(array(
                 'adress' => implode(',', $mail->getAddress()),
                 'text' => $mail->getText(),
